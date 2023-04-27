@@ -4,7 +4,7 @@
 		<cue name="Init">
 			<actions>
 				<do_if value="not ($ExpeditionFactions?)">
-					<set_value name="$ExpeditionFactions" exact="[@faction.argon,@faction.antigone,@faction.paranid,@faction.holyorder,@faction.teladi,@faction.xenon,@faction.split,@faction.terran,@faction.daldari,@faction.damarr,@faction.galdente,@faction.mindatar]"/>
+					<set_value name="$ExpeditionFactions" exact="[@faction.argon,@faction.antigone,@faction.paranid,@faction.holyorder,@faction.teladi,@faction.xenon,@faction.split,@faction.terran,@faction.boron,@faction.daldari,@faction.damarr,@faction.galdente,@faction.mindatar]"/>
 				</do_if>
 				<do_if value="not ($ExcludedFactions?)">
 					<set_value name="$ExcludedFactions" exact="[faction.civilian, faction.criminal, faction.khaak, faction.smuggler, faction.visitor]"/>

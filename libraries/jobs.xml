@@ -3830,7 +3830,11 @@
   <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center'][@name='{20204,6201}']/location[@faction='split']/@class">galaxy</replace>
   <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center'][@name='{20204,6201}']/location[@faction='split']/@macro">xu_ep2_universe_macro</replace>
   <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center'][@name='{20204,6201}']/location[@faction='split']" type="@matchextension">false</add>
-  <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center'][@name='{20204,6201}']/ship/loadout/level[@exact='0.7']/@exact">1.0</replace>
+  <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center']/ship">
+    <loadout>
+      <level exact="1"/>
+    </loadout>
+  </add>
   <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center'][@name='{20204,6201}']/subordinates/subordinate[@job='zyarth_escort_m_carrier']/@job">zyarth_frigate_escort_m</replace>
   <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_center'][@name='{20204,6201}']/subordinates">
     <subordinate job="zyarth_destroyer_escort_l_noescort"/>
@@ -3838,12 +3842,16 @@
   <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familyzhin'][@name='{20204,3201}']/orders/order/param[@name='range'][@value='class.zone']/@value">class.sector</replace>
   <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familyzhin'][@name='{20204,3201}']/quota" type="@zone">1</add>
   <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familyzhin'][@name='{20204,3201}']/location[@faction='split']" type="@matchextension">false</add>
-  <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familyzhin'][@name='{20204,3201}']/ship/loadout/level[@exact='0.7']/@exact">1.0</replace>
+  <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familyzhin']/ship">
+    <loadout>
+      <level exact="1"/>
+    </loadout>
+  </add>
   <remove sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familyzhin'][@name='{20204,3201}']/subordinates/subordinate[@job='zyarth_resupplier_escort_xl']"/>
   <replace sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familykritt'][@name='{20204,3201}']/orders/order/param[@name='range'][@value='class.zone']/@value">class.sector</replace>
-  <remove sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familykritt'][@name='{20204,3201}']/ship/loadout/level[@exact='0.7']/@exact"/>
-  <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familykritt'][@name='{20204,3201}']/ship/loadout/level" type="@min">0.8</add>
-  <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familykritt'][@name='{20204,3201}']/ship/loadout/level" type="@max">1.0</add>
+  <add sel="/jobs/job[@id='zyarth_carrier_patrol_xl_familykritt']/ship">
+    <level min="0.8" max="1.0"/>
+  </add>
   <replace sel="/jobs/job[@id='zyarth_destroyer_patrol_l_border_sector'][@name='{20204,3301}']/orders/order/param[@name='range'][@value='class.cluster']/@value">class.sector</replace>
   <replace sel="/jobs/job[@id='zyarth_destroyer_patrol_l_border_sector'][@name='{20204,3301}']/quota/@galaxy">48</replace>
   <replace sel="/jobs/job[@id='zyarth_destroyer_patrol_l_border_sector'][@name='{20204,3301}']/quota/@sector">2</replace>
@@ -5689,9 +5697,6 @@
   <replace sel="/jobs/job[@id='pioneers_fighter_escort_s'][@name='{20204,2901}']/ship/loadout/level/@min">0.25</replace>
   <replace sel="/jobs/job[@id='pioneers_fighter_escort_s'][@name='{20204,2901}']/ship/loadout/level/@max">1.0</replace>
   <add sel="/jobs/job[@id='pioneers_fighter_escort_s'][@name='{20204,2901}']/ship/loadout/level" type="@profile">bell</add>
-  <replace sel="/jobs/job[@id='yaki_raider_m_sector'][@name='{20204,3401}']/ship/loadout/level/@min">0.25</replace>
-  <replace sel="/jobs/job[@id='yaki_fighter_escort_mixed'][@name='{20204,3401}']/ship/loadout/level/@min">0.1</replace>
-  <replace sel="/jobs/job[@id='yaki_fighter_escort_s_escort'][@name='{20204,3401}']/ship/loadout/level/@min">0.1</replace>
   <add sel="/jobs/job[@id='xenon_free_miner_m_mineral_ter'][@name='{20204,1901}']/modifiers" type="@rebuild">true</add>
   <replace sel="/jobs/job[@id='xenon_free_miner_m_mineral_ter'][@name='{20204,1901}']/orders/order/param[@name='maxbuy'][@value='2']/@value">5</replace>
   <replace sel="/jobs/job[@id='xenon_free_miner_m_mineral_ter'][@name='{20204,1901}']/orders/order/param[@name='maxsell'][@value='2']/@value">5</replace>
@@ -5746,6 +5751,597 @@
   <add sel="/jobs/job[@id='ministry_tech_trader_s'][@name='{20204,401}']/ship/loadout/level" type="@min">0.8</add>
   <add sel="/jobs/job[@id='ministry_tech_trader_s'][@name='{20204,401}']/ship/loadout/level" type="@max">1.0</add>
   <add sel="/jobs">
+  <replace sel="/job/add[@silent='true']/job/ship/loadout/level/@min">0.8</replace>
+  <replace sel="/job/add[@silent='true']/job/ship/loadout/level/@max">1.0</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_universal_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_universal_trader_l']/quota/@galaxy">6</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_universal_trader_l_hightech']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_universal_trader_l_hightech']/quota/@galaxy">6</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_import_trader_m']/quota/@galaxy">7</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_import_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_import_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='argon_import_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='paranid_import_trader_m']/quota/@galaxy">7</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='paranid_import_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='paranid_import_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='paranid_import_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='teladi_import_trader_m']/quota/@galaxy">7</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='teladi_import_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='teladi_import_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='teladi_import_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s_queenseeker']/quota/@galaxy">12</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s_queenseeker']/quota/@maxgalaxy"/>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s_queenseeker']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s_queenseeker']/quota" type="@sector">1</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s_queenseeker']/ship/loadout/level/@min">0.5</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s_queenseeker']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s']/quota/@maxgalaxy"/>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_scout_patrol_s']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_construction_m_boron']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_construction_m_boron']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='argon_construction_m_boron']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_random']/orders/order/param/@value">class.sector</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_random']/quota/@galaxy">12</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_random']/quota/@zone"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_random']/quota" type="@sector">2</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_random']/ship/loadout/level/@min">0.5</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_random']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_tradestation']/quota/@galaxy">12</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_tradestation']/quota/@zone">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_tradestation']/ship/loadout/level/@min">0.25</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_patrol_s_boron_tradestation']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_escort_s_boron']/quota/@variation"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_escort_s_boron']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_escort_s_boron']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='hatikvah_fighter_escort_s_boron']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_destroyer_patrol_l_boron']/orders/order/param/@value">class.sector</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='argon_destroyer_patrol_l_boron']/quota/@galaxy">30</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='argon_destroyer_patrol_l_boron']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='argon_destroyer_patrol_l_boron']/location" type="@matchextension">false</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='argon_destroyer_patrol_l_boron']/subordinates">
+    <subordinate job="argon_destroyer_escort_l"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='argon_destroyer_patrol_l_boron']/subordinates">
+    <subordinate job="argon_fighter_escort_s_frigate"/>
+  </add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bogas_trader_m_fake']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/basket/@basket">bio_boron_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/basket/@basket">biobio_boron_da</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/basket/@basket">bio_boron_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/basket/@basket">bio_boron_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/quota/@galaxy">12</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_bio_trader_m_fake']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/orders/order/param/@value">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/basket/@basket">food_boron_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/basket/@basket">food_boron_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_food_trader_s_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/orders/order/param/@value">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/orders/order/param/@value">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medical_trader_s_fake']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/quota/@galaxy">21</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/quota" type="@sector">3</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/quota/@galaxy">21</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/quota" type="@sector">3</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/quota/@galaxy">21</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_m_fake']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_energycell_trader_s']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_equipment_trader_m_border_only']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_trader_m_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/quota/@galaxy">7</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_ship_construction_trader_m_border_only']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedgas_trader_m_fake']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/basket/@basket">refined_mineral_normal_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/basket/@basket">refined_mineral_normal_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/quota/@cluster"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/quota/@sector">2</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/basket/@basket">refined_mineral_normal_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_refinedmineral_trader_m_initial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/quota/@galaxy">7</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/orders">
+    <orders>
+      <order order="TradeRoutine" default="true">
+        <param name="minbuy" value="0"/>
+        <param name="maxbuy" value="5"/>
+        <param name="minsell" value="0"/>
+        <param name="maxsell" value="5"/>
+      </order>
+    </orders>
+  </replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/orders/order/@order">TradeRoutine</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/orders/order/param/@name">minbuy</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/orders/order/param/@value">0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/orders/order">
+    <param name="maxbuy" value="5"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/orders/order">
+    <param name="minsell" value="0"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/orders/order">
+    <param name="maxsell" value="5"/>
+  </add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_tech_trader_s']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/basket/@basket">water_ec_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l_border']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/basket/@basket">water_ec_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/quota" type="@sector">2</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/basket/@basket">water_ec_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/quota/@galaxy">28</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/quota/@cluster"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/quota/@sector">4</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/orders/order/param/@value">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/basket/@basket">water_ec_da</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/quota/@galaxy">14</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/quota" type="@sector">4</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_water_trader_m_intial']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_m']/quota/@maxgalaxy">24</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_m']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_m']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_l']/orders/order/@order">TradeRoutineDAAI</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_l']/quota/@maxgalaxy">12</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_l']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_l']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_l']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_stationtrader_l']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_liquid']/quota/@galaxy">15</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_liquid']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_liquid']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_liquid']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_liquid']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_liquid']/ship/cargo"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid']/ship/cargo"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid_initial']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_liquid_initial']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_mineral']/quota/@galaxy">15</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_mineral']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_mineral']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_mineral']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_mineral']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_mineral']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral']/quota/@galaxy">8</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral_initial']/quota/@galaxy">8</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral_initial']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral_initial']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_mineral_initial']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/orders/order/param[@name='minsell']/@value">0</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/quota/@galaxy">10</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_s_mineral']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_ice']/quota/@galaxy">8</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_ice']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_ice']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_ice']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_ice']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_l_ice']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice']/quota/@galaxy">6</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice_initial']/quota/@galaxy">6</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice_initial']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice_initial']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice_initial']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice_initial']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_free_miner_m_ice_initial']/ship/cargo"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon_initial']/orders/order/param[@name='range']/@value">class.sector</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon_initial']/quota/@galaxy">5</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon_initial']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon_initial']/quota" type="@sectir">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon_initial']/subordinates/subordinate[@assignment='defence'][@group='5']" pos="before">
+    <subordinate job="boron_destroyer_escort_l" assignment="defence" group="4"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon_initial']/subordinates/subordinate[@assignment='defence'][@group='6']" pos="before">
+    <subordinate job="boron_fighter_escort_s_carrier_flagship" assignment="defence" group="6"/>
+  </add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon']/orders/order/param[@name='range']/@value">class.sector</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon']/quota/@galaxy">5</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon']/quota" type="@sector">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon']/subordinates/subordinate[@assignment='defence'][@group='5']" pos="before">
+    <subordinate job="boron_destroyer_escort_l" assignment="defence" group="4"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_xl_argon']/subordinates/subordinate[@assignment='defence'][@group='6']" pos="before">
+    <subordinate job="boron_fighter_escort_s_carrier_flagship" assignment="defence" group="6"/>
+  </add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_l_sector']/quota/@cluster"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_l_sector']/quota" type="@sector">1</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_l_sector']/ship/loadout/level/@min">0.6</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_l_sector']/ship/loadout/level" type="@profile">bell</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_patrol_l_sector']/subordinates/subordinate[@assignment='defence'][@job='boron_fighter_escort_s_carrier']" pos="before">
+    <subordinate job="boron_fighter_escort_s_carrier" assignment="defence"/>
+  </add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_border_only']/orders/order/param/@value">class.sector</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_border_only']/quota/@galaxy">10</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_border_only']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_border_only']/ship/loadout/level/@exact">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_border_only']/subordinates/subordinate[@assignment='attack']" pos="before">
+    <subordinate job="boron_gunboat_escort_m" assignment="defence"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_border_only']/subordinates">
+    <subordinate job="boron_fighter_escort_s_carrier" assignment="defence"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_leader']/location" type="@matchextension">false</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_patrol_l_leader']/subordinates">
+    <subordinate job="boron_fighter_escort_s_carrier" assignment="defence"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_patrol_m_sector_exp']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_patrol_m_sector_exp']/ship/loadout/level/@min">0.8</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_patrol_m_sector_exp']/subordinates">
+    <subordinate job="boron_fighter_escort_s_carrier"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_patrol_m_sector_exp']/subordinates">
+    <subordinate job="boron_fighter_escort_s_carrier"/>
+  </add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_exp_mission']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_exp_mission']/ship/loadout/level/@min">0.8</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_exp_mission']/subordinates">
+    <subordinate job="boron_fighter_escort_s_carrier"/>
+  </add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_border_mission']/quota/@galaxy">10</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_border_mission']/quota/@maxgalaxy">5</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_border_mission']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_border_mission']/ship/loadout/level/@min">0.8</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_medium_patrol_m_sector_border_mission']/subordinates/subordinate" pos="before">
+    <subordinate job="boron_fighter_escort_s_corvette"/>
+  </add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_police_patrol_s']/quota/@galaxy">14</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_police_patrol_s']/quota/@sector">1</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_police_patrol_s']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_police_patrol_s']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_police_patrol_s']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_flagship']/quota/@wing">3</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_flagship']/ship/loadout/level/@exact"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_flagship']/ship/loadout/level" type="@min">0.8</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_flagship']/ship/loadout/level" type="@max">1.0</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_flagship']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_argon']/quota/@wing">5</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_argon']/ship/loadout/level/@exact"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_argon']/ship/loadout/level" type="@min">0.8</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_argon']/ship/loadout/level" type="@max">1.0</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_carrier_escort_l_argon']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_escort_l']/quota/@wing">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_escort_l']/ship/loadout/level/@min">0.8</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_escort_l']/ship/loadout/level/@max">1.0</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_escort_l_single']/quota/@wing">3</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_escort_l_single']/ship/loadout/level/@min">0.8</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_destroyer_escort_l_single']/ship/loadout/level/@max">1.0</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_escort_m']/quota/@wing">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_escort_m']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_escort_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_corvette_escort_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_gunboat_escort_m']/quota/@wing">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_gunboat_escort_m']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_gunboat_escort_m']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_gunboat_escort_m']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier_flagship']/quota/@wing">10</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier_flagship']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier_flagship']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier_flagship']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier']/quota/@wing">7</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_carrier']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_corvette']/quota/@wing">5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_corvette']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_corvette']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_corvette']/ship/loadout/level" type="@profile">bell</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_police']/quota/@wing">3</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_police']/ship/loadout/level/@min">0.25</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_police']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_fighter_escort_s_police']/ship/loadout/level" type="@profile">bell</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_escort_xl']/ship/loadout/level/@exact"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_escort_xl']/ship/loadout/level" type="@min">0.7</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_escort_xl']/ship/loadout/level" type="@max">1.0</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl']/quota/@galaxy">10</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl']/ship/loadout/level/@min"/>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl']/ship/loadout/level/@max"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl']/ship/loadout/level" type="@exact">1.0</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl_border_only']/quota/@galaxy">3</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl_border_only']/ship/loadout/level/@min"/>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl_border_only']/ship/loadout/level/@max"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl_border_only']/ship/loadout/level" type="@exact">1.0</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl_playeronly']/ship/loadout/level/@min">0.6</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_construction_vessel_xl_playeronly']/ship/loadout/level/@max">1.0</replace>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_xl']/quota" type="@maxgalaxy">1</add>
+  <add sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_xl']/location" type="@matchextension">false</add>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_xl']/ship/loadout/level/@min">0.5</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='boron_resupplier_xl']/ship/loadout/level/@max">1.0</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_civilian']/location/@class">station</replace>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_civilian']/quota/@sector"/>
+  <add sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_civilian']/quota" type="@station">5</add>
+  <remove sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_criminal']/quota/@sector"/>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_criminal']/quota/@station">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_criminal']/masstraffic/@respawndelay">180</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_criminal']/masstraffic/@relaunchdelay">30</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_dockarea']/quota/@station">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_pier']/quota/@station">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_storage']/quota/@station">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_production']/quota/@station">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_buildmodule']/quota/@station">2</replace>
+  <replace sel="/job/add[@sel='/jobs']/job[@id='masstraffic_boron_defencemodule']/quota/@station">2</replace>
     <job id="pioneers_military_patrol_m" name="{20204,2901}">
       <modifiers commandeerable="true"/>
       <orders>
@@ -6909,6 +7505,151 @@
           <level min="0.5" max="1.0" profile="bell"/>
         </loadout>
         <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+  </add>
+  <add sel="/jobs">
+    <job id="boron_military_patrol_m" name="{20204,2901}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <category faction="boron" tags="[factionlogic, military, medium]" size="ship_m"/>
+      <quota galaxy="18" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="boron" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="boron" tags="[military, medium]" size="ship_m"/>
+        <loadout>
+          <level min="0.5" max="1.0" profile="bell"/>
+        </loadout>
+        <owner exact="boron" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="boron_fighter_escort_s_carrier"/>
+        <subordinate job="boron_escort_m_solo_DA"/>
+      </subordinates>
+    </job>
+  </add>
+  <add sel="/jobs">
+    <job id="boron_escort_m_solo_DA" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="boron" tags="[military]" size="ship_m"/>
+      <quota wing="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="boron" tags="[military, medium]" size="ship_m"/>
+        <loadout>
+          <level min="0.5" max="1.0" profile="bell"/>
+        </loadout>
+        <owner exact="boron" overridenpc="true"/>
+      </ship>
+    </job>
+  </add>
+  <add sel="/jobs">
+    <job id="boron_expedition_DA" name="{20204,6301}">
+      <modifiers commandeerable="true" rebuild="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <category faction="boron" tags="[daexpedition]" size="ship_xl"/>
+      <quota galaxy="2" maxgalaxy="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="boron" relation="self" comparison="exact" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="boron" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="1.0"/>
+        </loadout>
+        <owner exact="boron" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="boron_destroyer_escort_l"/>
+        <subordinate job="boron_fighter_escort_s_carrier"/>
+        <subordinate job="boron_gunboat_escort_m"/>
+        <subordinate job="boron_corvette_escort_m"/>
+      </subordinates>
+    </job>
+  </add>
+  <add sel="/jobs">
+    <job id="boron_military_patrol_m_mission" name="{20204,2901}" comment="each sector, expansion">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <category faction="boron" tags="[military, medium]" size="ship_m"/>
+      <quota galaxy="10" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="boron" relation="self" comparison="exact" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="boron" tags="[military, medium]" size="ship_m"/>
+        <loadout>
+          <level min="0.5" max="1.0" profile="bell"/>
+        </loadout>
+        <owner exact="boron" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="boron_fighter_escort_s_carrier"/>
+      </subordinates>
+    </job>
+  </add>
+  <add sel="/jobs">
+    <job id="boron_escort_m_solo_DA" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.dartvertical"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="boron" tags="[military]" size="ship_m"/>
+      <quota wing="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="boron" tags="[military, medium]" size="ship_m"/>
+        <loadout>
+          <level min="0.5" max="1.0" profile="bell"/>
+        </loadout>
+        <owner exact="boron" overridenpc="true"/>
+      </ship>
+    </job>
+  </add>
+  <add sel="/jobs">
+    <job id="boron_common_trader_l_da" name="{20204,7001}">
+      <modifiers rebuild="true" commandeerable="false"/>
+      <orders>
+        <order order="TradeRoutineDAAI" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="3"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="3"/>
+        </order>
+      </orders>
+      <basket basket="legal_common_da"/>
+      <category faction="boron" tags="[freighter, trader]" size="ship_l"/>
+      <quota galaxy="14" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="boron" relation="self" comparison="exact" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="boron" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0.5" max="1.0" profile="bell"/>
+        </loadout>
+        <owner exact="boron" overridenpc="true"/>
       </ship>
     </job>
   </add>

@@ -133,4 +133,21 @@
       </wares>
     </basket>
   </add>
+  <add sel="/baskets">
+    <basket id="bio_boron_da">
+      <wares>
+        <ware ware="bofu"/>
+        <ware ware="bogas"/>
+        <ware ware="medicalsupplies"/>
+        <ware ware="plankton"/>
+      </wares>
+    </basket>
+  </add>
+  <add sel="/baskets">
+    <basket id="food_boron_da">
+      <wares>
+        <ware ware="bofu"/>
+      </wares>
+    </basket>
+  </add>
 </diff>
